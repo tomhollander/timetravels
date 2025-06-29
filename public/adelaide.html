@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-335HL1Y2SP"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-335HL1Y2SP');
+    </script>    
+    <title>Time Travels: Historical maps of Adelaide</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="scripts/maps.js"></script>
+    <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Historical maps of Adelaide from 1936 and today." />
+    <meta name="keywords" content="historical, maps, sydney, australia, gregorys, voommaps, voom" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <a href="index.html"><img src="images/site_logo_no_text.png" alt="Time Travels - Historical Maps" class="logo-image" /></a>
+            <div class="logo-text">
+                <div class="logo-title"><a href="index.html" style="text-decoration: none; color: inherit;">Time Travels</a></div>
+                <div class="logo-subtitle">Historical Maps</div>
+            </div>
+        </div>
+        <ul class="main-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </header>
+
+    <div class="tabs">
+        <div class="tab" id="keytab" onclick="window.location='adelaide_key.html'">Key Map</div>
+        <div class="tab" id="year-1936" onclick="setYear('1936');">1936</div>
+        <div class="tab" id="year-today" onclick="showGoogleMap();">Today</div>
+    </div>
+
+    <div id="goNorth" class="nav horizontal" onclick="go('north');">▲</div>
+    <div class="mapContainer">
+        <div id="goWest" class="nav vertical" onclick="go('west');">◀</div>
+        <div id="maps">
+
+        </div>
+        <div id="osm"></div>
+        <div id="goEast" class="nav vertical" onclick="go('east');">▶</div>
+    </div>
+    <div id="goSouth" class="nav horizontal" onclick="go('south');">▼</div>
+
+        <!-- Modal for magnified image -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img id="modalImage" src="" alt="Magnified Image" >
+            </div>
+        </div>
+
+        <script>
+            if (getQueryStringParameter('page')) {
+                currentPage = getQueryStringParameter('page');
+            } else {
+                currentPage = "1";
+            }
+            if (getQueryStringParameter('year')) {
+                currentYear = getQueryStringParameter('year');
+            } else {
+                currentYear = "1936";
+            }
+
+            document.addEventListener('DOMContentLoaded', async () => {
+                // Call the function to load data
+                data = await loadData("adelaide");
+                showInitialMap();
+            });
+            
+        </script>
+    </body>
+</html>
