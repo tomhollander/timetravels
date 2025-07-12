@@ -13,7 +13,16 @@ img {
     border: 0;
     margin: 0;
     padding: 0;
-    display: block;
+}
+
+.maparea {
+    display: inline-block; /* Use inline-block instead of block */
+
+    max-width: 100%;
+    height: auto;
+    border: 0;
+    padding: 0;
+    vertical-align: top; /* Prevent baseline alignment issues */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -314,20 +323,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #666;
 }
 
-.maparea {
-    display: block;
-    margin: 0 auto; /* Center the image horizontally */
-    position: relative; /* Ensure the image is positioned relative to its container */
-    
-}
 
-/* Key map mobile responsiveness */
-.maparea {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-}
 
 @media (max-width: 768px) {
     .maparea {

@@ -1,5 +1,6 @@
 let data = null;
 let city = null;
+let fileType = 'jpg'; // Default file type
 
 
 function showHideMaps(idToShow, idToHide) {
@@ -20,7 +21,7 @@ async function displayMap(year, mapPage, pushState = true) {
     const images = [];
     
     for(let i = 0; i < mapData.maps.length; i++) {
-        const mapUrl = `maps/${city}/${year}/${mapData.maps[i]}.jpg`;
+        const mapUrl = `maps/${city}/${year}/${mapData.maps[i]}.${fileType ?? "jpg"}`;
         const map = mapData.maps[i];
         const img = document.createElement('img');
         img.classList.add('map');
@@ -451,9 +452,10 @@ addEventListener("popstate", function (e) {
   });
 
 // Function to load data.json file
-async function loadData(cityToLoad) {
+async function loadData(cityToLoad, mapfileType = 'jpg') {
     try {
         city = cityToLoad;
+        fileType = mapfileType; 
         const response = await fetch(`maps/${city}/data.json`);
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
