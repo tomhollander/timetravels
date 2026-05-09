@@ -456,7 +456,7 @@ async function loadData(cityToLoad, mapfileType = 'jpg') {
     try {
         city = cityToLoad;
         fileType = mapfileType; 
-        const response = await fetch(`maps/${city}/data.json`);
+        const response = await fetch(`citycontent/${city}/data.json`);
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
