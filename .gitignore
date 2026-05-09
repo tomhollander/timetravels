@@ -1,1 +1,3 @@
 node_modules/
+public/maps/*/*.jpg
+public/maps/*/*.png

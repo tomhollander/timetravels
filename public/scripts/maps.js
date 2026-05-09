@@ -21,7 +21,7 @@ async function displayMap(year, mapPage, pushState = true) {
     const images = [];
     
     for(let i = 0; i < mapData.maps.length; i++) {
-        const mapUrl = `maps/${city}/${year}/${mapData.maps[i]}.${fileType ?? "jpg"}`;
+        const mapUrl = `https://maptime.z8.web.core.windows.net/maps/${city}/${year}/${mapData.maps[i]}.${fileType ?? "jpg"}`;
         const map = mapData.maps[i];
         const img = document.createElement('img');
         img.classList.add('map');
