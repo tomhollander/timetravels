@@ -40,6 +40,7 @@
         <div class="tab" id="year-1935" onclick="setYear('1935');">1935</div>
         <div class="tab" id="year-1942" onclick="setYear('1942');">1942</div>
         <div class="tab" id="year-1954" onclick="setYear('1954');">1954</div>
+        <div class="tab" style="display: none" id="year-1990" onclick="setYear('1990');">1990</div>
         <div class="tab" id="year-today" onclick="showGoogleMap();">Today</div>
     </div>
 
@@ -78,6 +79,10 @@
                 // Call the function to load data
                 data = await loadData("sydney");
                 showInitialMap();
+
+                if (getQueryStringParameter('godmode')) {
+                    document.getElementById("year-1990").style.display = "inline-block";
+                }
             });
             
         </script>

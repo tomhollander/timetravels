@@ -1,0 +1,10 @@
+[
+    { "page":"north-belconnen", "maps":["north-belconnen"], "west":null, "north":null, "east":"far-north", "south":"south-belconnen", "centre":[-35.21984051359966, 149.05396106848113]},
+    { "page":"far-north", "maps":["far-north"], "west":"north-belconnen", "north":null, "east":null, "south":"inner-north", "centre":[-35.23534011929498, 149.13687246154763]},
+    { "page":"south-belconnen", "maps":["south-belconnen"], "west":null, "north":"north-belconnen", "east":"inner-north", "south":"weston-creek", "centre":[-35.2737775227479, 149.04866940170717]},
+    { "page":"inner-north", "maps":["inner-north"], "west":"south-belconnen", "north":"far-north", "east":null, "south":"inner-south", "centre":[-35.26916513113843, 149.1386035307787]},
+    { "page":"weston-creek", "maps":["weston-creek"], "west":null, "north":"south-belconnen", "east":"inner-south", "south":"woden", "centre":[-35.32202826615971, 149.05364391805486]},
+    { "page":"inner-south", "maps":["inner-south"], "west":"weston-creek", "north":"inner-north", "east":"weston-creek", "south":"woden", "centre":[-35.319041334808226, 149.13442908964925]},
+    { "page":"woden", "maps":["woden"], "west":null, "north":"weston-creek", "east":null, "south":null, "centre":[-35.367066858321714, 149.07578591646939]}
+    
+]
